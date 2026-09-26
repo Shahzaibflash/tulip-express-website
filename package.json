@@ -1,0 +1,14 @@
+{
+  "name": "tew-project",
+  "private": true,
+  "workspaces": [
+    "x"
+  ],
+  "scripts": {
+    "dev": "npm --prefix x run dev",
+    "build": "npm --prefix x run build",
+    "preview": "npm --prefix x run preview",
+    "lint": "npm --prefix x run lint",
+    "postinstall": "npm --prefix x install"
+  }
+}

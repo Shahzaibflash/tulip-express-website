@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Tulip Express Brand: Tulip Red (#E02D44), Deep Navy (#0A192F), Soft White (#F8F9FA) */
+    --background: 0 0% 97.3%;
+    --foreground: 213 85% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 85% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 85% 11%;
+
+    --primary: 351 78% 54%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 213 85% 11%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 210 20% 96%;
+    --muted-foreground: 213 20% 40%;
+
+    --accent: 351 78% 54%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 351 78% 54%;
+
+    --radius: 0.75rem;
+
+    /* Premium Design Tokens */
+    --navy: 213 85% 11%;
+    --navy-light: 213 60% 20%;
+    --tulip-red: 351 78% 54%;
+    --tulip-red-glow: 351 78% 65%;
+    --cool-grey: 0 0% 97.3%;
+    --glass: 0 0% 100% / 0.85;
+    --glass-border: 351 78% 54% / 0.15;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --shadow-card: 0 10px 30px -10px hsl(213 85% 11% / 0.08), 0 4px 12px -2px hsl(213 85% 11% / 0.03);
+    --shadow-card-hover: 0 25px 50px -12px hsl(213 85% 11% / 0.16), 0 10px 20px -5px hsl(213 85% 11% / 0.06);
+    --shadow-glow: 0 0 35px hsl(351 78% 54% / 0.45);
+    --shadow-2xl: 0 30px 60px -15px hsl(213 85% 11% / 0.25);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 351 78% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
+  /* Robust mobile responsive fixes for date inputs & pickers */
+  input[type="date"] {
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  input[type="date"]::-webkit-date-and-time-value {
+    text-align: left;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+
+  input[type="date"]::-webkit-datetime-edit {
+    display: inline-flex;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .react-datepicker-wrapper,
+  .react-datepicker__input-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: hsl(var(--glass));
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(var(--tulip-red)) 0%, hsl(var(--tulip-red-glow)) 100%);
+  }
+
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+
+  .bg-navy-light {
+    background-color: hsl(var(--navy-light));
+  }
+
+  .text-navy {
+    color: hsl(var(--navy));
+  }
+
+  .bg-tulip-red {
+    background-color: hsl(var(--tulip-red));
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-2xl {
+    box-shadow: var(--shadow-2xl);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .badge-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary border border-primary/20 backdrop-blur-sm;
+  }
+}
