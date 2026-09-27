@@ -4,7 +4,7 @@ const WhatsAppButton = () => (
     target="_blank"
     rel="noopener noreferrer"
     aria-label="Chat on WhatsApp"
-    className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[hsl(142,70%,45%)] text-white shadow-xl animate-pulse-glow hover:animate-none transition-all duration-300 hover:scale-110"
+    className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[hsl(142,70%,45%)] text-white shadow-xl animate-pulse-glow [animation-duration:3s] hover:animate-none transition-all duration-300 hover:scale-110"
   >
     <svg
       viewBox="0 0 24 24"
